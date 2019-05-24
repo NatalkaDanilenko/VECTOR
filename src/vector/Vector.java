@@ -53,25 +53,34 @@ public class Vector {
         return v1.getA() * v2.getA() + v1.getB() * v2.getB() + v1.getC() * v2.getC();
     }
 
-    public static double [] vectorMiltipl (Vector v1, Vector v2){
+    public static Vector vectorMiltipl (Vector v1, Vector v2){
         double c2 = v2.getC();
         double c1 = v1.getC();
         double b2 = v2.getB();
         double b1 = v1.getB();
         double a2 = v2.getA();
         double a1 = v1.getA();
-        return new double[]{b1 * c2 - c1 * b2,
+        return new Vector(b1 * c2 - c1 * b2,
                 c1 * a2 - a1 * c2,
-                a1 * b2 - b1 * a2};
+                a1 * b2 - b1 * a2);
     }
 
-    public static double [] plus (Vector v1, Vector v2){
+    public static Vector plus (Vector v1, Vector v2){
         double c2 = v2.getC();
         double c1 = v1.getC();
         double b2 = v2.getB();
         double b1 = v1.getB();
         double a2 = v2.getA();
         double a1 = v1.getA();
-        return new double[]{a1 + a2, b1+ b2, c1 + c2};
+        return new Vector(a1 + a2, b1+ b2, c1 + c2);
+    }
+
+    @Override
+    public String toString() {
+        return "Vector{" +
+                 a +
+                ", " + b +
+                ", " + c +
+                '}';
     }
 }
